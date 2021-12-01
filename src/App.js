@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+import { Form } from 'react-bootstrap';
+
+import MyForm from './components/MyForm';
+
+import Day1 from './Day1';
 
 function App() {
+  const [puzzleResult, setPuzzleResult] = useState(""); 
+
+  const _getDay = (dayNumber, puzzleNumber) => {
+    switch(dayNumber) {
+      case 1: 
+        return new Day1(puzzleNumber);
+      default: 
+        console.log("Invalid day.");
+        return null;
+    }
+  }
+
+  const runScript = (input) => {
+    var reader = new FileReader();
+    var day = parseInt(input.name.split("_")[1]);
+    var puzzle = parseInt(input.name.split("_")[2].split(".")[0]);
+    reader.onload = (e) => {
+      var myDay = _getDay(day, puzzle);
+      setPuzzleResult(myDay.execute(e.target.result));
+    }
+    reader.readAsText(input);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <MyForm runScript={runScript}/>
+      <Form>
+        <Form.Group>
+          <Form.Control type="text" defaultValue={puzzleResult}/>
+        </Form.Group>
+      </Form>
     </div>
   );
 }
