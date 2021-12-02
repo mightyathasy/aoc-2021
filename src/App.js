@@ -5,7 +5,8 @@ import { Form } from 'react-bootstrap';
 
 import MyForm from './components/MyForm';
 
-import Day1 from './Day1';
+import Day1 from './days/Day1';
+import Day2 from './days/Day2';
 
 function App() {
   const [puzzleResult, setPuzzleResult] = useState(""); 
@@ -14,6 +15,8 @@ function App() {
     switch(dayNumber) {
       case 1: 
         return new Day1(puzzleNumber);
+      case 2: 
+        return new Day2(puzzleNumber);
       default: 
         console.log("Invalid day.");
         return null;
