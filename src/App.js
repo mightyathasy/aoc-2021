@@ -7,6 +7,7 @@ import MyForm from './components/MyForm';
 
 import Day1 from './days/Day1';
 import Day2 from './days/Day2';
+import Day3 from './days/Day3';
 
 function App() {
   const [puzzleResult, setPuzzleResult] = useState(""); 
@@ -17,6 +18,8 @@ function App() {
         return new Day1(puzzleNumber);
       case 2: 
         return new Day2(puzzleNumber);
+      case 3: 
+        return new Day3(puzzleNumber);
       default: 
         console.log("Invalid day.");
         return null;
