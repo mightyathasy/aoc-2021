@@ -2,20 +2,6 @@ import BaseDay from "./BaseDay";
 
 class Day4 extends BaseDay {
 
-    constructor(puzzle) {
-        super();
-        this._puzzle = parseInt(puzzle);
-    }
-
-    execute = (input) => {
-        if(this._puzzle === 1) {
-            return this._executePuzzle1(input);
-        }
-        if(this._puzzle === 2) {
-            return this._executePuzzle2(input);
-        }
-    }
-
     _executePuzzle1 = (input) => {
         // What will your final score be if you choose that board?
         var numbers = input.split("\n")[0].split(",").map(n => parseInt(n));
