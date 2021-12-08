@@ -12,6 +12,7 @@ import Day4 from './days/Day4';
 import Day5 from './days/Day5';
 import Day6 from './days/Day6';
 import Day7 from './days/Day7';
+import Day8 from './days/Day8';
 
 function App() {
   const [puzzleResult, setPuzzleResult] = useState(""); 
@@ -32,6 +33,8 @@ function App() {
         return new Day6(puzzleNumber);
       case 7: 
         return new Day7(puzzleNumber);
+      case 8: 
+        return new Day8(puzzleNumber);
       default: 
         console.log("Invalid day.");
         return null;
