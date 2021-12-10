@@ -17,7 +17,7 @@ function App() {
     var reader = new FileReader();
     reader.onload = (e) => {
       var myDay = dayFacotry.getDay(day, puzzle);
-      setPuzzleResult(myDay.execute(e.target.result));
+      if(myDay) setPuzzleResult(myDay.execute(e.target.result));
     }
     reader.readAsText(input);
   }
