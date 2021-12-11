@@ -8,6 +8,7 @@ import Day7 from './days/Day7';
 import Day8 from './days/Day8';
 import Day9 from './days/Day9';
 import Day10 from './days/Day10';
+import Day11 from './days/Day11';
 
 class DayFactory {
 
@@ -33,6 +34,8 @@ class DayFactory {
             return new Day9(puzzleNumber);
           case 10: 
             return new Day10(puzzleNumber);
+          case 11: 
+            return new Day11(puzzleNumber);
           default: 
             console.log("Invalid day.");
             return null;
