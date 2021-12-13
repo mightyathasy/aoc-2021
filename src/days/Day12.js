@@ -66,7 +66,7 @@ class Day12 extends BaseDay {
 
         return numberOfValidPath;
     }
-    
+
     _findValidPaths = (path, fnCaveToVisit) => {
         var validPathsFound = 0;
         var lastCave = path[path.length-1];
@@ -86,8 +86,6 @@ class Day12 extends BaseDay {
             validPathsFound += this._findValidPaths(currentPath, fnCaveToVisit);
         })
         
-        debugger;
-
         return validPathsFound;
     }
 
