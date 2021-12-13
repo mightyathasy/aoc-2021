@@ -6,12 +6,13 @@ import { Form } from 'react-bootstrap';
 import MyForm from './components/MyForm';
 import DayFactory from './DayFactory';
 
-function App() {
+const dayFacotry = new DayFactory();
+
+const App = () => {
   const [puzzleResult, setPuzzleResult] = useState(""); 
   const [day, setDay] = useState("");
   const [puzzle, setPuzzle] = useState("");
 
-  const dayFacotry = new DayFactory();
 
   const runScript = (input) => {
     var reader = new FileReader();
