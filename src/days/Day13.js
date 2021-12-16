@@ -52,7 +52,7 @@ class Day13 extends BaseDay {
         })
         console.log(codeString);
 
-        // The output is the following on the console for the input of Day 13:
+        // The output FOR ME is the following on the console for the input of Day 13:
 
         // .##....##.####..##..#....#..#.###....##.
         // #..#....#....#.#..#.#....#..#.#..#....#.
